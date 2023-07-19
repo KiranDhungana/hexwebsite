@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lora:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    /* color: #f2f5f7; */
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+body{
+    overflow-x: hidden;
+}
+nav{
+    height: 6rem;
+    width: 100vw;
+    background-color: #5672e4;
+    /* opacity: 0.6; */
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+.img-cont{
+  background-image: url('https://lh3.googleusercontent.com/p/AF1QipPpEMZ8GmysD4FtX0EOQ-K4Jy1PF8rp33TSREpa=s1360-w1360-h1020');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  /* opacity: 0.2; */
+}
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.logo img {
+    height: 5rem;
+    width: 5rem;
+}
+.heading{
+    font-size: 4rem;
+    color: white;
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 48vw;
+    padding: 0 0.2vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+    /* margin-left: 40vw; */
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0;
+}
+.nav-links li a:hover {
+    color: #61DAFB;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: red;
+    position: absolute;
+    transition: all ease-in-out 350ms;
+    margin: 10px 0 0 0;
+    /* margin-top: 10px; */
+}
+.nav-links li a:hover::after{
+    width: 100%;
+}
+
+/*Styling Buttons*/
+.login-button{
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+.login-button:hover {
+    color: #131418;
+    background-color: #f2f5f7;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+.join-button{
+    color: #131418;
+    background-color: #61DAFB;
+    border: 1.5px solid #61DAFB;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+.title{
+      text-align: center;
+      /* border: 5px solid; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  /* color: green; */
+}
+/*Stying for small screens*/
+@media (max-width: 600px) {
+    input{
+        /* padding-top: 0rem;
+         */
+         width: 90%;
+         font-size: 8px;
+ /* padding: 25px; */
+    }
+   .main .overlay{
+        padding-top: 550px;
+       
+    }
+    label .down{
+padding-left:40px ;
+    }
+  .overlay  .down{
+        font-size: 25px;
+      
+    }
+    .box {
+      
+        width: 85px;;
+    }
+}
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+        /* width: 100%; */
+    }
+    .heading{
+        font-size: 50px;
+    }
+    .overlay{
+        padding-top: 0rem;
+
+    }
+    .col{
+        max-width: 250%;
+    }
+    input{
+        /* padding-top: 0rem;
+         */
+         width: 90%;
+         font-size: 8px;
+ /* padding: 25px; */
+    }
+    .down{
+        font-size: 3px;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #131418;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+/* .main{
+    /* position: absolute; */
+/* } */ 
+.overlay {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    padding-top: 28rem;
+    /* top: 28rem;
+    left: 12rem; */
+}
+
+
+.title {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.col {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    color: rgb(238, 97, 97);
+}
+
+.col div {
+    width: 350px;
+    text-align: center;
+}
+
+.overlay input {
+    width: 55%;
+    font-family: 'Josefin';
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    /* border: 2px solid black; */
+    border: none;
+    box-shadow: 5px 5px 15px 3px rgb(108, 245, 45);
+    /* border-color: transparent; */
+    border-radius: 15px;
+    height: 80px;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 5px;
+    font-weight: 1000;
+}
+.down{
+    font-family: 'Poppins', sans-serif;
+    color: rgb(240, 138, 21);
+    font-size: 22px;
+}
